@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1=title
+  - var image_names=["hotel1.jpg","hotel2.jpg","hotel3.jpg","hotel4.jpg","hotel5.jpg","hotel7.jpg","hotel9.jpg"]
+  - for(let i=0;i<3;i++){
+  - let randomIndex=Math.floor(Math.random()*7)
+  - let imageName= image_names[randomIndex]
+    img(src=`/images/${imageName}` alt=imageName height=300 width=300 )
+  -}
