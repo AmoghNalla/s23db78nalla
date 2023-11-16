@@ -13,4 +13,6 @@ var router = express.Router();
 router.get('/', hotel_controlers.hotel_view_all_Page );
 /* GET detail hotel page */
 router.get('/detail', hotel_controlers.hotel_view_one_Page);
+/* GET create hotel page */
+router.get('/create', hotel_controlers.hotel_create_Page);
 module.exports = router;
