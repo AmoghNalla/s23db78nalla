@@ -11,4 +11,6 @@ var express=require('express');
 const hotel_controlers= require('../controllers/hotel');
 var router = express.Router();
 router.get('/', hotel_controlers.hotel_view_all_Page );
+/* GET detail hotel page */
+router.get('/detail', hotel_controlers.hotel_view_one_Page);
 module.exports = router;
