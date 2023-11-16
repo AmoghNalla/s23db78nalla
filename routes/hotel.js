@@ -17,5 +17,7 @@ router.get('/detail', hotel_controlers.hotel_view_one_Page);
 router.get('/create', hotel_controlers.hotel_create_Page);
 /* GET create update page */
 router.get('/update', hotel_controlers.hotel_update_Page);
+/* GET delete hotel page */
+router.get('/delete', hotel_controlers.hotel_delete_Page);
 
 module.exports = router;
