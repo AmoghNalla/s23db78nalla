@@ -23,9 +23,18 @@ exports.hotel_create_post = function(req, res) {
 res.send('NOT IMPLEMENTED: hotel create POST');
 };
 // Handle hotel delete form on DELETE.
-exports.hotel_delete = function(req, res) {
-res.send('NOT IMPLEMENTED: hotel delete DELETE ' + req.params.id);
-};
+exports.hotel_delete = async function(req, res) {
+    console.log("delete " + req.params.id)
+    try {
+    result = await hotel.findByIdAndDelete( req.params.id)
+    console.log("Removed " + result)
+    res.send(result)
+    } catch (err) {
+    res.status(500)
+    res.send(`{"error": Error deleting ${err}}`);
+    }
+    };
+    
 
 // Handle hotel update form on PUT.
 exports.hotel_update_put= async function(req,res){
@@ -84,6 +93,7 @@ exports.hotel_create_post = async function(req, res) {
      res.send(`{"error": ${err}}`);
      }
    };
+    
 
 
     
