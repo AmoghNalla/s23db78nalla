@@ -1,20 +1,25 @@
 extends layout
+
 block content
-  h1= title
-  - let hotelid = toShow._id
-  - let name = toShow.name
-  - let numOfRooms = toShow.numOfRooms
-  - let rate  = toShow.rate
-    div
-      div.row
-        div(class='hotelAttr mr-3') hotel  ID:
-        div #{hotelid}
-      div.row
-        div(class='hotelAttr mr-3') name:
-        div #{name}
-      div.row
-        div(class='hotelAttr mr-3') numOfRooms:
-        div #{numOfRooms}
-      div.row
-        div(class='hotelAttr mr-3') rate:
-        div #{rate}
+  h1.text-center= title
+  if (toShow == null)
+    h2 No instance to delete
+  else
+    // Use a card layout for better styling and centering
+    .card.mx-auto.mt-5
+      .card-body.text-center
+        div.row
+          div(class='hotelAttr') hotel ID:
+          div #{toShow._id}
+        div.row
+          div(class='hotelAttr') name:
+          div #{toShow.name}
+        div.row
+          div(class='hotelAttr') numOfRooms:
+          div #{toShow.numOfRooms}
+        div.row
+          div(class='hotelAttr') rate:
+          div #{toShow.rate}
+      .row.mt-3
+        .col.text-center
+          a.btn.btn-primary(href='/hotel') Back to hotel List
