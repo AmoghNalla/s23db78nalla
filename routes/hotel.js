@@ -14,10 +14,10 @@ router.get('/', hotel_controlers.hotel_view_all_Page );
 /* GET detail hotel page */
 router.get('/detail', hotel_controlers.hotel_view_one_Page);
 /* GET create hotel page */
-router.get('/create', hotel_controlers.hotel_create_Page);
+router.get('/create', secured, hotel_controlers.hotel_create_Page);
 /* GET create update page */
-router.get('/update', hotel_controlers.hotel_update_Page);
+router.get('/update', secured, hotel_controlers.hotel_update_Page);
 /* GET delete hotel page */
-router.get('/delete', hotel_controlers.hotel_delete_Page);
+router.get('/delete', secured, hotel_controlers.hotel_delete_Page);
 
 module.exports = router;
