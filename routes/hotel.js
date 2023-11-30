@@ -2,6 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
+const secured =(req,res,next)=>{
+  if(req.user){
+    return next();
+  }
+}
 router.get('/', function(req, res, next) {
   res.render('hotel', { title: 'Search Results Hotel' });
 });
